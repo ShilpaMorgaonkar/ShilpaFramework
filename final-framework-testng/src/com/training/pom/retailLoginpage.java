@@ -27,6 +27,10 @@ String retvalue= null;
 	@FindBy(xpath="//h1[contains(text(),'Dashboard')]")
 	private WebElement pagetitle; 
 	
+	
+	@FindBy(xpath="//a[@href='http://retail.hommelle.com/account/logout']")    //added 2 lines for logout
+	private WebElement logoutbtn; 
+	
 	public void sendUserName(String userName) {
 		this.userName.clear();
 		this.userName.sendKeys(userName);
@@ -41,7 +45,12 @@ String retvalue= null;
 		this.loginBtn.click();
 		retvalue= this.pagetitle.getText();
 		return retvalue;	}
-}
+	
+	public void clickLogoutbtn() {
+		this.logoutbtn.click();}
+	}
+	
+
 
 
 

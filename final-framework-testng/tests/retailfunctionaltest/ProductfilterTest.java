@@ -77,7 +77,7 @@ public class ProductfilterTest {
 	@Test (priority =3)
 	public void filterProductName() throws InterruptedException		// filter product as per name 
 	{
-		produtspom.sendproductname("Diamond ring");
+		produtspom.sendproductname("Integer vitae iaculis massa");
 		actualName =produtspom.clickNameFilterBtn(); 
 		expectedName = "Diamond ring";
 		Thread.sleep(5000);
@@ -88,7 +88,7 @@ public class ProductfilterTest {
 	@Test (priority =4)
 	public void filterProductPrice() throws InterruptedException 	// filter product as per price of product
 	{
-		produtspom.sendproductprise("8566.0000");		
+		produtspom.sendproductprise("805.0000");		
 		actualPrice = produtspom.clickPriceFilterBtn(); 
 		expectedPrice = "8566.0000";
 		Thread.sleep(3000);

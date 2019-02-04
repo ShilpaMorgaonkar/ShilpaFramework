@@ -59,7 +59,7 @@ public class Productstest {
 		Thread.sleep(3000);
 	}
 	@Test(priority =2)
-	public void catalog() throws InterruptedException 				//move to calatog and click on product 
+	public void catalog() throws InterruptedException 				//move to catalog and click on product 
 	{
 		catalogpom.movecatalog();
 		Thread.sleep(3000);
