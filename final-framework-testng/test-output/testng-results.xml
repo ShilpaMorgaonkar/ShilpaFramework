@@ -1,41 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17881" started-at="2019-02-04T04:24:34Z" finished-at="2019-02-04T04:24:52Z">
+  <suite name="Default suite" duration-ms="97857" started-at="2019-02-14T19:34:18Z" finished-at="2019-02-14T19:35:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17881" started-at="2019-02-04T04:24:34Z" finished-at="2019-02-04T04:24:52Z">
-      <class name="retailfunctionaltest.OrderTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:retailfunctionaltest.OrderTest@6f7fd0e6]" name="setUpBeforeClass" is-config="true" duration-ms="21" started-at="2019-02-04T04:24:34Z" finished-at="2019-02-04T04:24:34Z">
+    <test name="Default test" duration-ms="97857" started-at="2019-02-14T19:34:18Z" finished-at="2019-02-14T19:35:56Z">
+      <class name="retailfunctionaltest.OrderStatusChangeNewTest">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="setUpBeforeClass" is-config="true" duration-ms="20" started-at="2019-02-14T19:34:18Z" finished-at="2019-02-14T19:34:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:retailfunctionaltest.OrderTest@6f7fd0e6]" name="setUp" duration-ms="6939" started-at="2019-02-04T04:24:34Z" finished-at="2019-02-04T04:24:41Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="setUp" duration-ms="10667" started-at="2019-02-14T19:34:18Z" finished-at="2019-02-14T19:34:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginuser()[pri:1, instance:retailfunctionaltest.OrderTest@6f7fd0e6]" name="loginuser" duration-ms="5396" started-at="2019-02-04T04:24:41Z" finished-at="2019-02-04T04:24:46Z">
+        <test-method status="PASS" signature="shopnow()[pri:1, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="shopnow" duration-ms="21400" started-at="2019-02-14T19:34:28Z" finished-at="2019-02-14T19:34:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginuser -->
-        <test-method status="PASS" signature="selectesales()[pri:2, instance:retailfunctionaltest.OrderTest@6f7fd0e6]" name="selectesales" duration-ms="108" started-at="2019-02-04T04:24:46Z" finished-at="2019-02-04T04:24:47Z">
+        </test-method> <!-- shopnow -->
+        <test-method status="PASS" signature="login()[pri:2, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="login" duration-ms="1277" started-at="2019-02-14T19:34:50Z" finished-at="2019-02-14T19:34:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="checkout()[pri:3, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="checkout" duration-ms="29508" started-at="2019-02-14T19:34:51Z" finished-at="2019-02-14T19:35:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkout -->
+        <test-method status="PASS" signature="adminlogin()[pri:4, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="adminlogin" duration-ms="2195" started-at="2019-02-14T19:35:21Z" finished-at="2019-02-14T19:35:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminlogin -->
+        <test-method status="PASS" signature="selectesales()[pri:5, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="selectesales" duration-ms="68" started-at="2019-02-14T19:35:23Z" finished-at="2019-02-14T19:35:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectesales -->
-        <test-method status="PASS" signature="selectorder()[pri:3, instance:retailfunctionaltest.OrderTest@6f7fd0e6]" name="selectorder" duration-ms="3315" started-at="2019-02-04T04:24:47Z" finished-at="2019-02-04T04:24:50Z">
+        <test-method status="PASS" signature="selectorder()[pri:6, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="selectorder" duration-ms="3680" started-at="2019-02-14T19:35:23Z" finished-at="2019-02-14T19:35:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectorder -->
-        <test-method status="PASS" signature="generateinvoice()[pri:4, instance:retailfunctionaltest.OrderTest@6f7fd0e6]" name="generateinvoice" duration-ms="76" started-at="2019-02-04T04:24:50Z" finished-at="2019-02-04T04:24:50Z">
+        <test-method status="PASS" signature="changeorderstatus()[pri:7, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="changeorderstatus" duration-ms="825" started-at="2019-02-14T19:35:27Z" finished-at="2019-02-14T19:35:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- generateinvoice -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:retailfunctionaltest.OrderTest@6f7fd0e6]" name="tearDown" is-config="true" duration-ms="1982" started-at="2019-02-04T04:24:50Z" finished-at="2019-02-04T04:24:52Z">
+        </test-method> <!-- changeorderstatus -->
+        <test-method status="PASS" signature="openuserlogin()[pri:8, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="openuserlogin" duration-ms="18780" started-at="2019-02-14T19:35:27Z" finished-at="2019-02-14T19:35:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openuserlogin -->
+        <test-method status="PASS" signature="chkmyorderhistoty()[pri:9, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="chkmyorderhistoty" duration-ms="3685" started-at="2019-02-14T19:35:46Z" finished-at="2019-02-14T19:35:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- chkmyorderhistoty -->
+        <test-method status="PASS" signature="verifyorderstatus()[pri:10, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="verifyorderstatus" duration-ms="35" started-at="2019-02-14T19:35:50Z" finished-at="2019-02-14T19:35:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyorderstatus -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:retailfunctionaltest.OrderStatusChangeNewTest@47c62251]" name="tearDown" is-config="true" duration-ms="5657" started-at="2019-02-14T19:35:50Z" finished-at="2019-02-14T19:35:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- retailfunctionaltest.OrderTest -->
+      </class> <!-- retailfunctionaltest.OrderStatusChangeNewTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

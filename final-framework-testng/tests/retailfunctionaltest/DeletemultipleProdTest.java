@@ -13,7 +13,15 @@ import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+/*
+* Author : Shilpa Morgaonkar
+* Test Case ID : RTTC_044
+* Test Case Description : To Verify whether application allows the admin to delete multiple product from product list
+* Precondition : 1. user should launch the application by entering valid URL
+* 2. Login as admin
 
+* 
+*/ 
 public class DeletemultipleProdTest {
 	private WebDriver driver;
 	private String baseUrl;
@@ -48,25 +56,24 @@ public class DeletemultipleProdTest {
 	driver.quit();
 		}
   @Test(priority =1)
-	public void loginadmin() throws InterruptedException			//login to application
+	public void loginadmin() 									//login to application
 	{
 		retailLoginpage.sendUserName("admin");
 		retailLoginpage.sendPassword("admin@123");
 		retailLoginpage.clickLoginBtn(); 
-		Thread.sleep(3000);
+		
 	}
 	@Test(priority =2)
-	public void catalog() throws InterruptedException				//move to catalog  and select product option
+	public void catalog() 										//move to catalog  and select product option
 	{
 		
 		catalogpom.movecatalog();
-		Thread.sleep(3000);
 		catalogpom.clickproducts();
-		Thread.sleep(3000);
+		
 	}
 		
 	@Test(priority =3)
-	public void selectmultiprod() throws InterruptedException 		// select multiple products
+	public void selectmultiprod() throws InterruptedException 									// select multiple products
 	{
 		produtspom.sendproductname("Shilpa Test Prod1");
 		String selectedproduct= produtspom.clickNameFilterBtn();
@@ -75,13 +82,13 @@ public class DeletemultipleProdTest {
 		}
 	
 	@Test(priority =4)                                               //delete selected multiple products 
-	public void deleteselectedprod() throws InterruptedException 	
+	public void deleteselectedprod() 
 	{
 		String actualmessage = produtspom.delectmultipleprodchkbox();
 		String expectedmessage = "Success: You have modified products!";
 		boolean st = actualmessage.contains(expectedmessage);
         assertTrue(st);
-        Thread.sleep(3000);
+       
 	}
 
 }

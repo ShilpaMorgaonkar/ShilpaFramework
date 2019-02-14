@@ -13,6 +13,7 @@ public class ProductAddPOM {
 		boolean bValue = false;
 		String mesgretvalue =null;
 		
+		
 		public ProductAddPOM(WebDriver driver) {
 			this.driver = driver; 
 			PageFactory.initElements(driver, this);
@@ -41,19 +42,54 @@ public class ProductAddPOM {
 		@FindBy(xpath="//input[@id='input-category']")
 		private WebElement categorylist; 
 		
-		@FindBy(linkText="Earrings")
+		@FindBy(linkText="Electronic")
 		private WebElement selectedcategory; 
 		
+		@FindBy(xpath="//div[contains(text(),'Electronic')]")
+		private WebElement catevalue; 
+		
+		@FindBy(xpath="//a[contains(text(),'Discount')]")
+		private WebElement discounttab; 
+				
+		@FindBy(xpath="//table[@id='discount']//button[@type='button']")
+		private WebElement adddiscountbtn; 
+		
+		@FindBy(xpath="//td[@class='text-right']//input[@placeholder='Quantity']")
+		private WebElement discountquantity;
+		
+		@FindBy(xpath="//td[@class='text-right']//input[@placeholder='Price']")
+		private WebElement discountprise;
+		
+		@FindBy(xpath="//tr[@id='discount-row0']//td[5]//div[1]//span[1]//button[1]//i[1]")
+		private WebElement startdate;
+		
+		@FindBy(xpath="//tr[@id='discount-row0']//td[6]//div[1]//span[1]//button[1]//i[1]")
+		private WebElement enddate;
+		
+		@FindBy(xpath="//input[@placeholder='Date End']")
+		private WebElement enddatevalue;
+		
+		@FindBy(xpath="//a[@href='#tab-reward']")
+		private WebElement rewardpointtab;
+		
+		@FindBy(xpath="//input[@id='input-points']")
+		private WebElement points;
+		
+		@FindBy(xpath="//div[@class='alert alert-danger']")
+		private WebElement errormsg; 
+		
+		@FindBy(xpath="//a[@class='btn btn-default']")
+		private WebElement canclebtn; 
 		
 		@FindBy(xpath="//i[@class='fa fa-save']")
 		private WebElement savebtn; 
 		
-		public void selectdataoption() throws InterruptedException
+		public void selectdataoption() 
 		{
 		this.dataoption.click();
 		}
 		
-		public void selectlinksoption() throws InterruptedException
+		public void selectlinksoption() 
 		{
 		this.linksoptions.click();
 		}
@@ -64,51 +100,141 @@ public class ProductAddPOM {
 			this.prodname.sendKeys(prodname);
 		}
 		
-		public void sendprodTitle(String prodtitle) throws InterruptedException 
-		{
+		public void sendprodTitle(String prodtitle) 
+		{  
 			this.prodtitle.clear();
 			this.prodtitle.sendKeys(prodtitle);
-			Thread.sleep(3000);
+			
 		}
 		
-		public void sendprodmodel(String prodmodel) throws InterruptedException 
+		public void sendprodmodel(String prodmodel) 
 		{
 			this.prodmodel.clear();
 			this.prodmodel.sendKeys(prodmodel);
-			Thread.sleep(3000);
+			
 		}
 		
-		public void sendprodprice(String prodprice) throws InterruptedException 
+		public void sendprodprice(String prodprice) 
 		{
 			this.prodprice.clear();
 			this.prodprice.sendKeys(prodprice);
-			Thread.sleep(3000);
+			
 		}
 		
-		public void sendprodquantity(String prodquantity) throws InterruptedException 
+		public void sendprodquantity(String prodquantity) 
 		{
 			this.prodquantity.clear();
 			this.prodquantity.sendKeys(prodquantity);
-			Thread.sleep(3000);
+			
 		}
 		
-		public void selecetcategory() throws InterruptedException 
+		public void selecetcategory() 
 		{
 				
 				this.categorylist.click(); 
-				Thread.sleep(2000);
 				Actions actions = new Actions(driver);
-				actions.moveToElement(this.selectedcategory).click().perform();
-				
+				actions.moveToElement(this.selectedcategory).click().perform();		
+		}
+		
+		public void selectdiscountoption() 
+		{
+			this.discounttab.click();
+			this.adddiscountbtn.click();
 			
 		}
+		
+		public void senddiscquantity(String discquantity)
+		{
+			this.discountquantity.clear();
+			this.discountquantity.sendKeys(discquantity);
+		}
+		
+		public void senddiscprise(String discprise)
+		{
+			this.discountprise.clear();
+			this.discountprise.sendKeys(discprise);
+		}
+		
+		public void selectstartdate()
+		{
+			this.startdate.click();
+			
+		}
+		
+		public void selectenddate()
+		{
+			//this.enddate.click();
+			this.enddatevalue.sendKeys("2019-03-14");
+			
+		}
+		
+		public void selectrewardpointtab()
+		{
+			this.rewardpointtab.click();
+			
+		}
+		
+		public void sendrewardPoints(String rewardpoints)
+		{
+			this.points.clear();
+			this.points.sendKeys(rewardpoints);
+		}
+		
+		public String chkerrmsg()
+		{
+			String errmsgvalue= this.errormsg.getText();
+			return errmsgvalue;
+		}
+		public void canclebtnclick()
+		{
+			this.canclebtn.click();
+		}
+		
 		public void savedetails() 
 		{
 			this.savebtn.click();
 			
 		}
+		public String getnamevalue()
+		{
+			return this.prodname.getAttribute("value");
+		}
+		
+        public String gettitlevalue()
+        {	
+		return this.prodtitle.getAttribute("value");
+		}
+        
+        public String getmodelvalue()
+        {	
+		return this.prodmodel.getAttribute("value");
+		}
+			
+        public int getpricevalue()
+        {	
+        	String Stringprice = this.prodprice.getAttribute("value");
+        	
+        	int intprice = Integer.parseInt(Stringprice);
+        	return intprice;
+		
+		}
+        
+        public int getquantityvalue()
+        {	
+		String Stringquan= this.prodquantity.getAttribute("value");
+		int intquan = Integer.parseInt(Stringquan);
+    	return intquan;
+		}
+        
+        public String getcategoryvalue()
+        {	
+		return this.catevalue.getText();
+		
+		}
+        
+		}
 		
 		
 				
-		}
+		
 

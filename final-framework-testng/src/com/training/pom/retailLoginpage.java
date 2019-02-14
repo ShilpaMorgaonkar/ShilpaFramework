@@ -1,5 +1,8 @@
 package com.training.pom;
 
+import java.util.ArrayList;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -47,10 +50,19 @@ String retvalue= null;
 		return retvalue;	}
 	
 	public void clickLogoutbtn() {
-		this.logoutbtn.click();}
-	}
+		this.logoutbtn.click();
+		}
 	
 
+//5. Open user site in new window
+			public void openuserSiteWindow() {
+			//((JavascriptExecutor) driver).executeScript("window.open()");
+			//ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			//driver.switchTo().window(tabs.get(1));
+			driver.get("http://retail.upskills.in");
+			}
+	
+			}
 
 
 

@@ -100,14 +100,13 @@ public class ProductsPOM {
 		if (cValue = true)
 		{
 			this.editbutton.click();
-			Thread.sleep(5000);
 		}
 		}
-		public void editselectedproduct() throws InterruptedException
+		public void editselectedproduct() 
 		{
 			this.chosesproductchkbox.click();
 			this.chosesproducteditbtn.click();
-			Thread.sleep(5000);
+			
 		}
 		
 		public void selectmultipleprodchkbox() throws InterruptedException
@@ -116,16 +115,14 @@ public class ProductsPOM {
 		this.prodlist.get(2).click();
 		}
 		
-		public String delectmultipleprodchkbox() throws InterruptedException
+		public String delectmultipleprodchkbox() 
 		{
 		boolean dValue=prodlist.get(1).isSelected();
 		boolean eValue=prodlist.get(2).isSelected();
 		if ((dValue = true) && (eValue= true) )
 			{
 				deletebutton.click();
-				Thread.sleep(5000);
 				alrt = driver.switchTo().alert();
-				Thread.sleep(5000);
 				alrt.accept(); //to click on OK button
 				multidelmesgretvalue= msg.getText();
 				driver.switchTo().defaultContent();

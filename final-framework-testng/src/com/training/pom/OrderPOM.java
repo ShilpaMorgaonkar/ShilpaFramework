@@ -42,7 +42,13 @@ public class OrderPOM {
 		private WebElement custname; 
 		
 		@FindBy(xpath="//button[@id='button-filter']")
-		private WebElement filterbycustname; 
+		private WebElement filterorder; 
+		
+		@FindBy(xpath="//div[@id='container']//tbody//tr[1]//td[2]")
+		private WebElement ordnumber; 
+		
+		@FindBy(xpath="//input[@placeholder='Order ID']")
+		private WebElement enterordernbr;
 		
 		public void movesales()
 		{
@@ -59,9 +65,23 @@ public class OrderPOM {
 		{
 			this.custname.clear();
 			this.custname.sendKeys(name);
-			this.filterbycustname.click();
+			this.filterorder.click();
 		}
-			
+		
+		public void filterorderbyid(String ordernbr)
+		{
+			this.enterordernbr.clear();
+			this.enterordernbr.sendKeys(ordernbr);
+			this.filterorder.click();
+		}
+		
+		public int getordernbr()
+		{
+			String ordnbrstr= this.ordnumber.getText();
+			int ordnbr = Integer.parseInt(ordnbrstr);
+			return ordnbr;
+		}
+		
 		public void vieworder() {
 			this.vieworder.click();
 		}

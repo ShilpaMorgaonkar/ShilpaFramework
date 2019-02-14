@@ -14,7 +14,20 @@ import java.io.IOException;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
-
+/*
+* Author : Shilpa Morgaonkar
+* Test Case ID : RTTC_045
+* Test Case Description : To Verify whether application 
+* allows admin to check the details of order placed by the user
+* Precondition : 
+* 
+*1. user should have launched the application & placed the order
+*
+*2. admin should launch the application by entering valid URL
+*
+3. Login as admin
+* 
+*/ 
 public class OrderTest {
 	private WebDriver driver;
 	private String baseUrl;
@@ -50,26 +63,27 @@ public class OrderTest {
     
 	  @Test(priority =1) 
 	  
-	  public void loginuser() throws InterruptedException    //login to application
+	  public void loginuser() 								    //login to application
 	    {
 	  			retailLoginpage.sendUserName("admin");
 	  			retailLoginpage.sendPassword("admin@123");
 	  			retailLoginpage.clickLoginBtn(); 
-	  			Thread.sleep(3000);
+	  			
 	     }
 	    
 	    @Test(priority =2) 			
-	     public void selectesales() throws InterruptedException    
+	     public void selectesales() 
 	     {
 	 
 	    	orderpom.movesales();                                //move to sales
 	     }	
 	    
 	    @Test(priority =3) 		
-	    public void selectorder() throws InterruptedException  
+	    public void selectorder() 
 	    {
 	    	orderpom.clickorder(); 
-	    	orderpom.filterorder("shilpa morgaonkar");           //select order by customer name(this case is added to check only desired product)                      
+	    	orderpom.filterorder("shilpa morgaonkar");           //select order by customer name(this case is added to check only desired product)
+	    	orderpom.filterorderbyid("118");
 	    	orderpom.vieworder();                                //view order
 	    	String actualmsg1= orderpom.retmsg();                //assertion to check selected order is viewed
 	    	String expectmsg1= "Orders";                  
@@ -78,10 +92,10 @@ public class OrderTest {
 	     }
 	        
 	      @Test(priority =4) 			
-		   public void generateinvoice() throws InterruptedException    //generate invoice number and assertion to check it
+		   public void generateinvoice() 					    //generate invoice number and assertion to check it
 		 {
 	    	String actualinvgenerated =orderpom.generateinvoice();  
-	        String expectedinvgenerated = "INV-2019-007";
+	        String expectedinvgenerated = "INV-2019-0012";
 			boolean st2 = actualinvgenerated.contains(expectedinvgenerated);
 			assertTrue(st2);
          }

@@ -19,6 +19,17 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
+/*
+* Author : Shilpa Morgaonkar
+* Test Case ID : RTTC_041
+* Test Case Description : To Verify whether application allows the admin to filter the product 
+* details with all textbox
+* Precondition : 
+* 1. user should launch the application by entering valid URL
+* 2. Login as admin
+* 
+*/ 
+
 public class ProductSelectionTest {
 	private WebDriver driver;
 	private String baseUrl;
@@ -55,80 +66,73 @@ public class ProductSelectionTest {
 		driver.quit();
 			}
   @Test(priority =1)
-	public void productselect() throws InterruptedException			//login to application
+	public void productselect() 									//login to application
 	{
 		retailLoginpage.sendUserName("admin");
 		retailLoginpage.sendPassword("admin@123");
 		retailLoginpage.clickLoginBtn(); 
-		Thread.sleep(3000);
+		
 	}
 	@Test(priority =2)
-	public void catalog() throws InterruptedException				//move to catalog  and select product option
+	public void catalog() 											//move to catalog  and select product option
 	{
 		
 		catalogpom.movecatalog();
-		Thread.sleep(1000);
 		catalogpom.clickproducts();
-		Thread.sleep(3000);
 	}
 	
 	@Test (priority =3)
-	public void filterProductName() throws InterruptedException		// filter product as per name of product
+	public void filterProductName()									// filter product as per name of product
 	{
 		produtspom.sendproductname("Integer vitae iaculis massa");
 		actualName =produtspom.clickNameFilterBtn(); 
 		expectedName = "Integer vitae iaculis massa";
-		Thread.sleep(1000);
 		boolean st1 = actualName.contains(expectedName);
 		assertTrue(st1);
 	}
 		
 	@Test (priority =4)
-	public void filterProductPrice() throws InterruptedException 	// filter product as per price of product
+	public void filterProductPrice() 								// filter product as per price of product
 	{
 		produtspom.sendproductprise("805.0000");		
 		actualPrice = produtspom.clickPriceFilterBtn(); 
 		expectedPrice = "805.0000";
-		Thread.sleep(1000);
 		boolean st2 = actualPrice.contains(expectedPrice);
 		assertTrue(st2);
 	}
 	
 	@Test (priority =5)
-	public void filterProductstatusFilterBtn() throws InterruptedException 	// filter product as per status of product
+	public void filterProductstatusFilterBtn() 					 	// filter product as per status of product
 	{
 		produtspom.selectstatus();
 		String actualStatus = produtspom.clickstatusFilterBtn(); 
 		String expectedStatus = "Enabled";
-		Thread.sleep(1000);
 		boolean st4 = actualStatus.contains(expectedStatus);
 		assertTrue(st4);
 	}
 	
 	@Test (priority =6)
-	public void filterProductModel() throws InterruptedException 	// filter product as per Model of product
+	public void filterProductModel() 							 	// filter product as per Model of product
 	{
 		produtspom.sendproductmodel("SKU-003");		
 		String actualModel = produtspom.clickModelFilterBtn(); 
 		String expectedModel = "SKU-003";
-		Thread.sleep(1000);
 		boolean st3 = actualModel.contains(expectedModel);
 		assertTrue(st3);
 	}
 		
 	@Test (priority =7)
-	public void filterProductquantity() throws InterruptedException 	// filter product as per quantity of product
+	public void filterProductquantity() 						     	// filter product as per quantity of product
 	{
 		produtspom.sendproductquantity("45");		
 		String actualquantity = produtspom.clickquantityFilterBtn(); 
 		String expectedquantity = "45";
-		Thread.sleep(1000);
 		boolean st5 = actualquantity.contains(expectedquantity);
 		assertTrue(st5);
 	}
 	
 	@Test (priority =8)
-	public void filterProductimage() throws InterruptedException 	// filter product as per image of product
+	public void filterProductimage() 									// filter product as per image of product
 	{
 		produtspom.selectimage();		
 		produtspom.clickimageFilterBtn(); 

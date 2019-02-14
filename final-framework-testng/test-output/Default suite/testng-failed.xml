@@ -3,13 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="retailfunctionaltest.ProductEditTest">
+      <class name="retailfunctionaltest.OrderStatusChangeNewTest">
         <methods>
-          <include name="editquantity"/>
+          <include name="openuserlogin"/>
           <include name="setUpBeforeClass"/>
           <include name="tearDown"/>
+          <include name="chkmyorderhistoty"/>
+          <include name="verifyorderstatus"/>
         </methods>
-      </class> <!-- retailfunctionaltest.ProductEditTest -->
+      </class> <!-- retailfunctionaltest.OrderStatusChangeNewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

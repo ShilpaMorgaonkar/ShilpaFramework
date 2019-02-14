@@ -15,6 +15,17 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
+/*
+* Author : Shilpa morgaonkar
+* Test Case ID : RTTC_042
+* Test Case Description : To Verify whether application allows admin to add product by 
+* entering valid credentials in mandatory fields only
+* Precondition : 
+* 1. user should launch the application by entering valid URL
+* 2. Login as admin
+
+*/
+
 public class ProdAddTest {
 	private WebDriver driver;
 	private String baseUrl;
@@ -49,27 +60,23 @@ public class ProdAddTest {
 	driver.quit();
 		}
   @Test(priority =1)
-	public void loginadmin() throws InterruptedException			//login to application
+	public void loginadmin() 		 								//login to application
 	{
 		retailLoginpage.sendUserName("admin");
 		retailLoginpage.sendPassword("admin@123");
 		retailLoginpage.clickLoginBtn(); 
-		Thread.sleep(3000);
+		
 	}
 	@Test(priority =2)
-	public void catalog() throws InterruptedException				//move to catalog-product-  click add option
+	public void catalog() 									//move to catalog-product-  click add option
 	{
-		
 		catalogpom.movecatalog();
-		Thread.sleep(3000);
 		catalogpom.clickproducts();
 		produtspom.addnewprod();
-		Thread.sleep(3000);
-		
 	}
 	
 	@Test(priority =3)
-	public void addGeneral() throws InterruptedException	//add information in general tab, data tab, links tab and save
+	public void addGeneral() 								//add information in general tab, data tab, links tab and save
 	{
 		productaddpom.sendprodname("Shilpa Test Prod1");
 		productaddpom.sendprodTitle("Shilpa Test Prod1");
@@ -83,13 +90,13 @@ public class ProdAddTest {
 		
 	}
 	@Test(priority =4)                                                //assertion to check return message
-	public void getmsg() throws InterruptedException 
+	public void getmsg() 
 	{
 		String actualmsg= produtspom.returnaddproductmessage();
 		String Expectedmsg = "Success: You have modified products!";	
 		boolean st = actualmsg.contains(Expectedmsg);
         assertTrue(st);
-        Thread.sleep(3000);
+        
 	}
 	}
 	

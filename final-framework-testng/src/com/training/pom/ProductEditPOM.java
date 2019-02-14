@@ -24,21 +24,21 @@ public class ProductEditPOM {
 	@FindBy(xpath="//i[@class='fa fa-save']")
 	private WebElement savebtn; 
 	
-	public void selectdataoption() throws InterruptedException
+	public void selectdataoption() 
 	{
 	this.dataoption.click();
 	
 	}
 
-	public void editselectdataoption() throws InterruptedException
+	public void editselectdataoption() 
 	{
 	this.quantity.clear();
 	this.quantity.sendKeys("45");
-	Thread.sleep(3000);
+	
 	
 	}
 	
-	public void saveditedquantity() throws InterruptedException
+	public void saveditedquantity() 
 	{
 		this.savebtn.click();
 		

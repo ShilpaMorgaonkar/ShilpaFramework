@@ -19,6 +19,14 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+/*
+* Author : Shilpa Morgaonkar
+* Test Case ID : RTTC_043
+* Test Case Description : To verify whether application allows admin to edit Quantity 
+* details of a product
+* Precondition : 1. user should launch the application by entering valid URL
+* 2. Login as admin
+*/ 
 
 public class ProductEditTest {
 	private WebDriver driver;
@@ -28,6 +36,8 @@ public class ProductEditTest {
 	private ProductsPOM produtspom;
 	private ProductEditPOM producteditpom;
 	private static Properties properties;
+	private String actualName=null;
+	private String expectedName=null;
  
   @Test(priority =0)
 	public void setUp() throws Exception {
@@ -54,33 +64,33 @@ public class ProductEditTest {
 		driver.quit();
 			}
   @Test(priority =1)
-	public void loginadmin() throws InterruptedException			//login to application
+	public void loginadmin() 										//login to application
 	{
 		retailLoginpage.sendUserName("admin");
 		retailLoginpage.sendPassword("admin@123");
 		retailLoginpage.clickLoginBtn(); 
-		Thread.sleep(3000);
+		
 	}
 	@Test(priority =2)
-	public void catalog() throws InterruptedException				//move to catalog  and select product option
+	public void catalog() 										//move to catalog  and select product option
 	{
-		
 		catalogpom.movecatalog();
-		Thread.sleep(3000);
 		catalogpom.clickproducts();
-		Thread.sleep(3000);
 	}
 		
 	@Test(priority =3)
-	public void editProduct() throws InterruptedException 		//select product and click on edit to go to edit screen
-	{
-		
+	public void editProduct() 									//select product and click on edit to go to edit screen
+	{	
+		produtspom.sendproductname("Shilpa-Edit case test data");
+		actualName =produtspom.clickNameFilterBtn(); 
+		expectedName = "Shilpa-Edit case test data";
+		boolean st1 = actualName.contains(expectedName);
+		assertTrue(st1);
 		produtspom.editselectedproduct();
-		
 	}
 	
 	@Test(priority =4)
-	public void editquantity() throws InterruptedException 		 //select data in option menu (edit screen) edit product quantity and save
+	public void editquantity() 							 		    //select data in option menu (edit screen) edit product quantity and save
 	{
 		producteditpom.selectdataoption();                           //select data in option menu (edit screen)
 		producteditpom.editselectdataoption();                       //edit quantity
